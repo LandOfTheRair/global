@@ -1,7 +1,4 @@
-// Import stylesheets
-import './style.css';
 
-// vue, bootstrap, vue-resource
 const Vue = window.Vue
 const VueResource = window['vue-resource'];
 const VueBootstrap = window['bootstrap-vue'];
