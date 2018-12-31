@@ -1,0 +1,12 @@
+{
+  "name": "lotr-leaderboard",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {
+    "axios": "^0.18.0",
+    "bootstrap-vue": "^1.5.1",
+    "v-tooltip": "^1.1.6",
+    "vue": "^2.5.21",
+    "vue-resource": "^1.5.1"
+  }
+}
