@@ -1,7 +1,7 @@
 
 const Vue = window.Vue
-const VueResource = window['vue-resource'];
-const VueBootstrap = window['bootstrap-vue'];
+const VueResource = window.VueResource
+const VueBootstrap = window.bootstrapVue;
 
 Vue.use(VueResource);
 Vue.use(VueBootstrap);
