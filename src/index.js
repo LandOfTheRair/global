@@ -2,9 +2,9 @@
 import './style.css';
 
 // vue, bootstrap, vue-resource
-const Vue = require('vue');
-const VueResource = require('vue-resource');
-const VueBootstrap = require('bootstrap-vue');
+const Vue = window.Vue
+const VueResource = window['vue-resource'];
+const VueBootstrap = window['bootstrap-vue'];
 
 Vue.use(VueResource);
 Vue.use(VueBootstrap);
