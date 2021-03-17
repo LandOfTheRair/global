@@ -18,7 +18,7 @@ new Vue({
     loadData: async function() {
 
       const urls = {
-        'https:': 'https://lotr-global.herokuapp.com',
+        'https:': 'https://global.server.rair.land',
         'http:': 'http://globalapi.rair.land'
       }
 
