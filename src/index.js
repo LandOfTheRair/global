@@ -1,6 +1,6 @@
 
-const Vue = window.Vue
-const VueResource = window.VueResource
+const Vue = window.Vue;
+const VueResource = window.VueResource;
 const VueBootstrap = window.bootstrapVue;
 
 Vue.use(VueResource);
@@ -19,7 +19,7 @@ new Vue({
 
       const urls = {
         'https:': 'https://global.server.rair.land',
-        'http:': 'http://globalapi.rair.land'
+        'http:': 'http://localhost:3000'
       }
 
       const res = await Vue.http.get(urls[location.protocol] + '/leaderboard');

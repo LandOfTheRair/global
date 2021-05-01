@@ -1,0 +1,108 @@
+<html>
+  <head>
+    <title>Characters | Land of the Rair</title>
+    
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="index.css">
+    <link rel="icon" href="https://rair.land/favicon.ico">
+
+    <script src="https://unpkg.com/vue@2.5.21/dist/vue.min.js"></script>
+    <script src="https://unpkg.com/bootstrap-vue@1.5.1/dist/bootstrap-vue.min.js"></script>
+    <script src="https://unpkg.com/vue-resource@1.5.1/dist/vue-resource.min.js"></script>
+  </head>
+
+  <body>
+    <div id="app">
+      <nav class="navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="#" v-if="character">{{ character.name }} the {{ character.gender }} level {{ character.level }} {{ character.baseClass }}</a>
+      </nav>
+      
+      <div class="container mt-3">
+        <div class="row" v-if="character">
+
+          <div class="col-md-3">
+            <div class="card">
+              <div class="card-body">
+                <h5>Character Information</h5>
+                <table>
+                  <tr>
+                    <td>Allegiance</td>
+                    <td>{{ character.allegiance }}</td>
+                  </tr>
+
+                  <tr>
+                    <td>HP</td>
+                    <td>{{ character.hp.maximum }}</td>
+                  </tr>
+
+                  <tr>
+                    <td>MP</td>
+                    <td>{{ character.mp.maximum }}</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="card">
+              <div class="card-body">
+                <h5>Gear</h5>
+
+                <div class="gear-container">
+                  <div class="gear">
+                    <div class="item-slot" v-for="slot in gear">
+                      <div class="item" v-if="slot">
+                        <div class="item-sprite" v-if="character.items.equipment[slot]">
+                          <img src="https://play.rair.land/assets/spritesheets/items.webp"
+                               :style="{ 'object-position': objectPosition(character.items.equipment[slot]) }" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="row">
+
+              <div class="col-md-12">
+                <div class="card">
+                  <div class="card-body">
+                    <h5>Stats</h5>
+                    <table>
+                      <tr v-for="stat in stats">
+                        <td>{{ stat }}</td>
+                        <td>{{ character.stats[stat] }}</td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-12">
+                <div class="card mt-4">
+                  <div class="card-body">
+                    <h5>Skills</h5>
+                    <table>
+                      <tr v-for="(skill, name) in character.skills">
+                        <td>{{ name }}</td>
+                        <td>{{ skillLevel(character.skills[name]) }}</td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
