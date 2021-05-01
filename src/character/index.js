@@ -42,7 +42,6 @@ new Vue({
     },
 
     objectPosition(item) {
-      console.log(item.name, this.items[item.name]);
       const realItem = this.items[item.name];
       const divisor = 32;
       const sprite = item.mods.sprite || realItem.sprite;
