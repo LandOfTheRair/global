@@ -20,32 +20,87 @@
       <div class="container mt-3">
         <div class="row" v-if="character">
 
-          <div class="col-md-3">
-            <div class="card">
-              <div class="card-body">
-                <h5>Character Information</h5>
-                <table>
-                  <tr>
-                    <td>Allegiance</td>
-                    <td>{{ character.allegiance }}</td>
-                  </tr>
+          <div class="col-md-3 col-xs-12">
+            <div class="row">
 
-                  <tr>
-                    <td>HP</td>
-                    <td>{{ character.hp.maximum }}</td>
-                  </tr>
+              <div class="col-md-12">
+                <div class="card mt-4">
+                  <div class="card-body">
+                    <h5>Character Information</h5>
+                    <table>
+                      <tr>
+                        <td>Allegiance</td>
+                        <td>{{ character.allegiance }}</td>
+                      </tr>
 
-                  <tr>
-                    <td>MP</td>
-                    <td>{{ character.mp.maximum }}</td>
-                  </tr>
-                </table>
+                      <tr>
+                        <td>HP</td>
+                        <td>{{ character.hp.maximum }}</td>
+                      </tr>
+
+                      <tr>
+                        <td>MP</td>
+                        <td>{{ character.mp.maximum }}</td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>  
               </div>
+
+              <div class="col-md-12">
+                <div class="card mt-4">
+                  <div class="card-body">
+                    <h5>Character Statistics</h5>
+                    <table>
+                      <tr>
+                        <td>Kills</td>
+                        <td>{{ character.statistics.statistics.kills || 0 }}</td>
+                      </tr>
+
+                      <tr>
+                        <td>Lair Kills</td>
+                        <td>{{ character.statistics.statistics.killslair || 0 }}</td>
+                      </tr>
+
+                      <tr>
+                        <td>Deaths</td>
+                        <td>{{ character.statistics.statistics.deaths || 0 }}</td>
+                      </tr>
+
+                      <tr>
+                        <td>Strips</td>
+                        <td>{{ character.statistics.statistics.strips || 0 }}</td>
+                      </tr>
+
+                      <tr>
+                        <td>Steps</td>
+                        <td>{{ character.statistics.statistics.steps || 0 }}</td>
+                      </tr>
+
+                      <tr>
+                        <td>NPCs Greeted</td>
+                        <td>{{ character.statistics.statistics.npcsgreeted || 0 }}</td>
+                      </tr>
+
+                      <tr>
+                        <td>Repeatable Quests</td>
+                        <td>{{ character.statistics.statistics.repeatablequests || 0 }}</td>
+                      </tr>
+
+                      <tr>
+                        <td>Daily Quests</td>
+                        <td>{{ character.statistics.statistics.dailyquests || 0 }}</td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>  
+              </div>
+
             </div>
           </div>
 
-          <div class="col-md-6">
-            <div class="card">
+          <div class="col-md-6 col-xs-12">
+            <div class="card mt-4">
               <div class="card-body">
                 <h5>Gear</h5>
 
@@ -65,13 +120,13 @@
             </div>
           </div>
 
-          <div class="col-md-3">
+          <div class="col-md-3 col-xs-12">
             <div class="row">
 
               <div class="col-md-12">
-                <div class="card">
+                <div class="card mt-4">
                   <div class="card-body">
-                    <h5>Stats</h5>
+                    <h5>Attributes</h5>
                     <table>
                       <tr v-for="stat in stats">
                         <td>{{ stat }}</td>
