@@ -17,7 +17,7 @@
 
   <body>
     <nav class="navbar navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">Land of the Rair Leaderboard</a>
+      <a class="navbar-brand px-4">Land of the Rair Leaderboard</a>
     </nav>
     
     <div class="container mt-3" id="app" v-cloak>
@@ -47,7 +47,10 @@
     
                   <tr v-if="child.results.length > 0" v-for="result in child.results">
                     <td>
-                      <strong>{{ result.name }}</strong>
+                      <strong>
+                        <a v-if="result.username" :href="'character/?username=' + result.username + '&charSlot=' + result.charSlot">{{ result.name }}</a>
+                        <span v-if="!result.username">{{ result.name }}</span>
+                      </strong>
                     </td>
     
                     <td>
